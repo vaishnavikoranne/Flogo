@@ -1,0 +1,22 @@
+{
+"name":"customdatetime",
+"type":"flogo:function",
+"version":"0.0.1",
+"title":"customdatetime",
+"description":"customdatetime function",
+"functions":[
+{
+"name":"totimestamp",
+"description":"Converts current date time to timestamp",
+"example":"customdatetime.totimestamp()\nReturns\n1573809431645",
+"args":[
+],
+"return":{
+"type":"int64"
+},
+"display":{
+"visible":true
+}
+}
+]
+}
