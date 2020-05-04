@@ -1,1 +1,1 @@
-module github.com/nshahn/contrib/function/customdatetime
+module github.com/vaishnavikoranne/Flogo/functions/customdatetime
