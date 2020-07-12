@@ -27,16 +27,12 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	seperator:=params[1].(string)
-
-	var arrV=reflect.ValueOf(items)
-	var len=arrV.Len()
-	var strArray = make([]string, len)
-	
-	
-	for i, v := range arrV {
-	    strArray[i] = v
-	}
-	str:=strings.Join(arrV, seperator)
+        var paramSlice []string 
+	for _, param := range items {
+	 paramSlice = append(paramSlice, param.(string))
+	 }
+	 
+	str:=strings.Join(paramSlice, seperator)
 	return str, nil
 
 
