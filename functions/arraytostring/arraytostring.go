@@ -33,7 +33,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	
 	var len=arrV.Len()
 	
-	var strArray [len]string
+	var strArray = make([]string, len)
 	
 	for i := 0; i < arrV.Len(); i++ {
 	    strArray[i]=arrV.Index(i) 
