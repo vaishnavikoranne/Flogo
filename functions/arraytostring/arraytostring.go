@@ -29,14 +29,10 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	
 	seperator:=params[1].(string)
 	
-	arrV:=reflect.ValueOf(items)
-	fmt.Println(arrV.Kind()) 
-	var len=arrV.Len()
 	
-	var strArray = make([]string, len)
 	
-	copy(strArray[:], arrV)
-	return strings.Join(strArray, seperator), nil
+	str:=strings.Join(items, seperator)
+	return str, nil
 
 
 }
