@@ -13,7 +13,7 @@
 {
  "name":"items",
  "type":"array",
- "valueType":any
+ "valueType":"any"
 }
 {
  "name":"seperator",
