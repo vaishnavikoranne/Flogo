@@ -1,1 +1,32 @@
+{
+“name”:”arraytostring”,
+“type”:”flogo:function”,
+“version”:”0.0.1",
+“title”:”arraytostring”,
+“description”:”arraytostring function”,
+“functions”:[
+{
+“name”:”arraytostring”,
+“description”:”Converts an array to string”,
+“example”:”arraytostring(array,',')\n Returns a string containing string with comma seperated values",
+“args”:[
+{
+ "name":"items",
+ "type":"array",
+ "valueType":any
+}
+{
+ "name":"seperator",
+ "type":"string"
 
+}
+],
+“return”:{
+“type”:”string"
+},
+“display”:{
+“visible”:true
+}
+}
+]
+}
