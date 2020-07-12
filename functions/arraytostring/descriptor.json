@@ -14,7 +14,7 @@
  "name":"items",
  "type":"array",
  "valueType":"any"
-}
+},
 {
  "name":"seperator",
  "type":"string"
