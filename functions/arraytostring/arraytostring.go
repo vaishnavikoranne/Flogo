@@ -29,7 +29,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	
 	seperator:=params[1].(string)
 	
-	
+	log.RootLogger().Debugf("Start array %+v ", items)
 	
 	str:=strings.Join(items, seperator)
 	return str, nil
