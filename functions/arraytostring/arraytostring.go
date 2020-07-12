@@ -4,7 +4,7 @@ import (
 	
 	
 	"strings"
-
+         "reflect"
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 )
@@ -25,7 +25,7 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 }
 
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
-	items:=params[0]
+	items:=reflect.ValueOf(params[0])
 	seperator:=params[1]
 	
 	return strings.Join(items, seperator), nil
