@@ -1,8 +1,8 @@
 package string
 
 import (
-	"fmt"
-	"github.com/project-flogo/core/data/coerce"
+	
+	
 	"strings"
 
 	"github.com/project-flogo/core/data"
@@ -26,7 +26,7 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
-	seperator:=param[1]
+	seperator:=params[1]
 	
 	return strings.Join(items, seperator), nil
 
