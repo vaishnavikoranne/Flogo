@@ -27,10 +27,13 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	seperator:=params[1].(string)
-	var len=items.Len()
+
+	var arrV=reflect.ValueOf(items)
+	var len=arrV.Len()
 	var strArray = make([]string, len)
 	
-	for i, v := range items {
+	
+	for i, v := range arrV {
 	    strArray[i] = v
 	}
 	str:=strings.Join(strArray, seperator)
