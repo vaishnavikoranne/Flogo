@@ -26,7 +26,7 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=reflect.ValueOf(params[0])
-	seperator:=params[1]
+	seperator:=reflect.ValueOf(params[1])
 	
 	return strings.Join(items, seperator), nil
 
