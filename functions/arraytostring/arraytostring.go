@@ -2,7 +2,7 @@ package string
 
 import (
 	
-	
+	"fmt"
 	"strings"
          "reflect"
 	"github.com/project-flogo/core/data"
@@ -30,7 +30,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	seperator:=params[1].(string)
 	
 	arrV:=reflect.ValueOf(items)
-	
+	fmt.println(arrV.Kind()) 
 	var len=arrV.Len()
 	
 	var strArray = make([]string, len)
