@@ -30,8 +30,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
         var paramSlice []string 
 	
 	arrV := reflect.ValueOf(items)
-	for(i:=0;i<arrV.Len();i++)
-	{
+	for i:=0;i<arrV.Len();i++ {
 	  paramSlice.append(paramSlice, arrV.Index(i)))	
 	}
 
