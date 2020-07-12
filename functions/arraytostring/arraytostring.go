@@ -25,9 +25,20 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 }
 
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
-	items:=reflect.ValueOf(params[0])
-	seperator:=reflect.ValueOf(params[1])
+	items:=params[0]
 	
-	return strings.Join(items, seperator), nil
+	seperator:=params[1]
+	
+	arrV:=reflect.valueOf(items)
+	
+	var len=arrV.Len()
+	
+	var strArray [len]string
+	
+	for i := 0; i < arrV.Len(); i++ {
+	    strArray[i]=arrV.Index(i) 
+	}
+	return strings.Join(strArray, seperator), nil
+
 
 }
