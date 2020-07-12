@@ -27,9 +27,9 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	
-	seperator:=params[1]
+	seperator:=params[1].(string)
 	
-	arrV:=reflect.valueOf(items)
+	arrV:=reflect.ValueOf(items)
 	
 	var len=arrV.Len()
 	
