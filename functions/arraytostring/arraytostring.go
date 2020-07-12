@@ -31,7 +31,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	
 	arrV := reflect.ValueOf(items)
 	for i:=0;i<arrV.Len();i++ {
-		paramSlice = append(paramSlice, arrV.Index(i).Interface().(string))	
+		paramSlice = append(paramSlice, arrV.Index(i).Interface())	
 	}
 
 	 
