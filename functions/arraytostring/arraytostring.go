@@ -26,12 +26,14 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
-	
 	seperator:=params[1].(string)
+	var len=items.Len()
+	var strArray = make([]string, len)
 	
-	log.RootLogger().Debugf("Start array %+v ", items)
-	
-	str:=strings.Join(items, seperator)
+	for i, v := range items {
+	    strArray[i] = v
+	}
+	str:=strings.Join(strArray, seperator)
 	return str, nil
 
 
