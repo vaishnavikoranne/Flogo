@@ -4,7 +4,7 @@ import (
 	
 	
 	"strings"
-        
+        "reflect"
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 )
@@ -36,7 +36,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	for i, v := range arrV {
 	    strArray[i] = v
 	}
-	str:=strings.Join(strArray, seperator)
+	str:=strings.Join(arrV, seperator)
 	return str, nil
 
 
