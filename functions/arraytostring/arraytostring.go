@@ -35,9 +35,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	
 	var strArray = make([]string, len)
 	
-	for i := 0; i < arrV.Len(); i++ {
-		strArray[i]=arrV.Index(i).(string) 
-	}
+	copy(strArray[:], arrV)
 	return strings.Join(strArray, seperator), nil
 
 
