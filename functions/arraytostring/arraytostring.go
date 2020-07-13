@@ -33,7 +33,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	//	inter:=arrV.Index(i).Interface()
 	//}
 	
-                for k, v := range items.([]interface{})[0].([]interface{})[0].(map[string]interface{}){
+                for _ , v := range items.([]interface{})[0].([]interface{})[0].(map[string]interface{}){
 		   
 			paramSlice = append(paramSlice, v.(string) )
 		} 
