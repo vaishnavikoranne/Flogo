@@ -35,7 +35,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	
                 for k, v := range items.([]interface{})[0].([]interface{})[0].(map[string]interface{}){
 		   
-			paramSlice = append(paramSlice, v.Value.(string) )
+			paramSlice = append(paramSlice, v.(string) )
 		} 
 			
 	str:=strings.Join(paramSlice, seperator)
