@@ -4,7 +4,7 @@ import (
 	
 	
 	"strings"
-        "reflect"
+        
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 )
@@ -28,16 +28,18 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	seperator:=params[1].(string)
         var paramSlice []string 
-	arrV := reflect.ValueOf(items)
-	for i:=0;i<arrV.Len();i++ {
-		inter:=arrV.Index(i).Interface()
-                for k, v := range inter {
+	//arrV := reflect.ValueOf(items)
+	//for i:=0;i<arrV.Len();i++ {
+	//	inter:=arrV.Index(i).Interface()
+        //        for k, v := range inter {
 		    
-			paramSlice = append(paramSlice,v.(string) )
-		} 
+	//		paramSlice = append(paramSlice,v.(string) )
+	//	} 
 			
-	}
-      
+	//}
+        for k, v := range items {
+		    paramSlice = append(paramSlice,v.(string) )
+		} 
 	 
 	str:=strings.Join(paramSlice, seperator)
 	return str, nil
