@@ -28,12 +28,11 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	seperator:=params[1].(string)
         var paramSlice []string 
-	
 	arrV := reflect.ValueOf(items)
 	for i:=0;i<arrV.Len();i++ {
-		paramSlice = append(paramSlice, arrV.Index(i))	
+		paramSlice = append(paramSlice, arrV.Index(i).(string))	
 	}
-
+      
 	 
 	str:=strings.Join(paramSlice, seperator)
 	return str, nil
