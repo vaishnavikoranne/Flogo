@@ -10,21 +10,21 @@ import (
 )
 
 func init() {
-	_ = function.Register(&arraytostring{})
+	_ = function.Register(&preparedata{})
 }
 
-type arraytostring struct {
+type preparedata struct {
 }
 
-func (s *arraytostring) Name() string {
-	return "arraytostring"
+func (s *preparedata) Name() string {
+	return "preparedata"
 }
 
-func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
+func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
 	return []data.Type{data.TypeAny, data.TypeString}, false
 }
 
-func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
+func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	separator:=params[1].(string)
         var paramSlice []string 
