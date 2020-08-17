@@ -21,7 +21,7 @@ func (s *preparedata) Name() string {
 }
 
 func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
-	return []data.Type{data.TypeAny, data.TypeString}, false
+	return []data.Type{data.TypeAny}, false
 }
 
 func (preparedata) Eval(params ...interface{}) (interface{}, error) {
