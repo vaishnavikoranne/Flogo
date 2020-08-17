@@ -12,7 +12,7 @@
 		"args":[
 		{
 		 "name":"items",
-		 "type":"any"
+		 "valueType":"any"
 		}
 		],
 		"return":{
