@@ -12,6 +12,7 @@
 		"args":[
 		{
 		 "name":"items",
+		 "type":"object"
 		 "valueType":"any"
 		}
 		],
