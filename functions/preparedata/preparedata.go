@@ -26,6 +26,18 @@ func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
+	fmt.Printf("%T\n", items)
+	str:="Hello"
+	/*var paramSlice []string 
+	arrV := reflect.ValueOf(items)
+	for i:=0;i<arrV.Len();i++ {
+		inter:=arrV.Index(i).Interface()
+	
+                for _ , v := range inter.(map[string]interface{}){
+		   
+			paramSlice = append(paramSlice, v.(string) )
+		} 
+	}
 	separator:=params[1].(string)
         var paramSlice []string 
 	arrV := reflect.ValueOf(items)
@@ -38,7 +50,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 		} 
 	}
 			
-	str:=strings.Join(paramSlice, separator)
+	str:=strings.Join(paramSlice, separator)*/
 	return str, nil
 
 
