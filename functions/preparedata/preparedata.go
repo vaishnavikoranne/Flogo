@@ -28,6 +28,13 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	fmt.Printf("%T\n", items)
 	str:="Hello"
+	keys := make([]string, len(items))
+	i := 0
+	for k := range items {
+	  keys[i] = k
+	  fmt.Printf("%s\n", k)	
+	  i++
+	}
 	/*var paramSlice []string 
 	arrV := reflect.ValueOf(items)
 	for i:=0;i<arrV.Len();i++ {
