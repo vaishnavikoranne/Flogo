@@ -29,7 +29,18 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	fmt.Printf("%T\n", items)
 	fmt.Println("%v\n", items)
 	fmt.Println("%#v", items)
-	str:="Hello"
+	str:=""
+	arrV := reflect.ValueOf(items)
+	for i:=0;i<arrV.Len();i++ {
+		inter:=arrV.Index(i).Interface()
+	
+                for k , v := range inter.(map[string]interface{}){
+		   
+			str+=k+'='+v.(string)
+		} 
+	}
+	fmt.Println("%s", str)
+	
 	/*mapString := make(map[string]string)
 	for key, value := range items {
 		strKey := fmt.Sprintf("%v", key)
