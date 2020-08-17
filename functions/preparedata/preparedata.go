@@ -3,7 +3,7 @@ package string
 import (
 	
 	"fmt"
-	"strings"
+	//"strings"
        "reflect"
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
@@ -36,7 +36,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	
                 for k , v := range inter.(map[string]interface{}){
 		   
-			str+=k+'='+v.(string)
+			str+=k+"="+v.(string)
 		} 
 	}
 	fmt.Println("%s", str)
