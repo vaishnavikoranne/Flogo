@@ -2,9 +2,9 @@ package string
 
 import (
 	
-	
-	"strings"
-        "reflect"
+	"fmt"
+	//"strings"
+        //"reflect"
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 )
