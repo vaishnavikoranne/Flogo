@@ -1,0 +1,26 @@
+{
+"name":"preparedata",
+"type":"flogo:function",
+"version":"0.0.1",
+"title":"preparedata",
+"description":"preparedata function",
+"functions":[
+{
+"name":"preparedata",
+"description":"Prepare data for SHA hashing ",
+"example":"ABC",
+"args":[
+{
+ "name":"items",
+ "type":"any",
+}
+],
+"return":{
+"type":"string"
+},
+"display":{
+"visible":true
+}
+}
+]
+}
