@@ -27,8 +27,9 @@ func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	fmt.Printf("%T\n", items)
+	fmt.Printf("%#v", items)
 	str:="Hello"
-	mapString := make(map[string]string)
+	/*mapString := make(map[string]string)
 	for key, value := range items {
 		strKey := fmt.Sprintf("%v", key)
 		strValue := fmt.Sprintf("%v", value)
@@ -36,7 +37,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 		mapString[strKey] = strValue
 	}
 	fmt.Printf("%#v", mapString)
-	
+	*/
 	/*keys := make([]string, len(items))
 	i := 0
 	for k := range items {
