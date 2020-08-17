@@ -27,7 +27,8 @@ func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	fmt.Printf("%T\n", items)
-	fmt.Printf("%#v", items)
+	fmt.Println("%v\n", items)
+	fmt.Println("%#v", items)
 	str:="Hello"
 	/*mapString := make(map[string]string)
 	for key, value := range items {
