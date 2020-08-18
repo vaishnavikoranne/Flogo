@@ -38,9 +38,10 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
         }
 	sort.Strings(keys) 
 	for _, k := range keys {
-		fmt.Println(k)
-		fmt.Println(url.PathEscape(fmt.Sprint(md[k])))
+		
 		if k=="currencyCode"{
+			fmt.Println(md[k])
+			fmt.Println(url.PathEscape(fmt.Sprint(md[k])))
 			str+=k+"="+fmt.Sprint(md[k])+"&"
         	}else{
 			str+=k+"="+url.PathEscape(fmt.Sprint(md[k]))+"&"
@@ -49,6 +50,8 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 		fmt.Println(str)
         }
 	fstr:=strings.ReplaceAll(str, "%20", "+")
+	fstr:=strings.ReplaceAll(fstr, "%2B", "+")
+	fstr:=strings.TrimSuffix(fstr, "&")
 	fmt.Println("%s", fstr)
 	
 	/*mapString := make(map[string]string)
