@@ -32,7 +32,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	str:=""
 	for key, element := range items.(map[string]interface{}) {
         	fmt.Println("Key:", key, "=>", "Element:", element)
-		str+=key+"="+element.(string)+"&"
+		str+=key+"="+fmt.Sprint(element)+"&"
    	}
 	fmt.Println("%s", str)
 	
