@@ -50,7 +50,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 		fmt.Println(str)
         }
 	fstr:=strings.ReplaceAll(str, "%20", "+")
-	fstr=strings.ReplaceAll(fstr, "%2B", "+")
+	//fstr=strings.ReplaceAll(fstr, "%2B", "+")
 	fstr=strings.TrimSuffix(fstr, "&")
 	fmt.Println("%s", fstr)
 	
