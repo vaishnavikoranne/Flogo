@@ -35,13 +35,14 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	
 	keys := make([]string, i)
 	j=0
+	md,ok:= mdi.(map[string]interface{})
 	for key, element := range items.(map[string]interface{}) {
 		keys[j]=key
 		j++
         }
 	sort.Strings(keys) 
 	for _, k := range keys {
-       	  str+=k+"="+fmt.Sprint(items[k])+"&"
+       	  str+=k+"="+fmt.Sprint(md[k])+"&"
         }
 	fmt.Println("%s", str)
 	
