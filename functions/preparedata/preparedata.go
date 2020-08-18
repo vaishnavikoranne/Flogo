@@ -3,6 +3,7 @@ package string
 import (
 	
 	"fmt"
+	"sort"
 	//"strings"
        //"reflect"
 	"github.com/project-flogo/core/data"
@@ -26,14 +27,19 @@ func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
-	fmt.Printf("%T\n", items)
-	fmt.Println("%v\n", items)
-	fmt.Println("%#v", items)
+	keys := make([]string, len(m))
 	str:=""
+	i:=0
 	for key, element := range items.(map[string]interface{}) {
-        	fmt.Println("Key:", key, "=>", "Element:", element)
-		str+=key+"="+fmt.Sprint(element)+"&"
+		keys[i]=key
+		i++
+        	//fmt.Println("Key:", key, "=>", "Element:", element)
+		//str+=key+"="+fmt.Sprint(element)+"&"
    	}
+	sort.Strings(keys) 
+	for _, k := range keys {
+       	  str+=key+"="+fmt.Sprint(items[k])+"&"
+        }
 	fmt.Println("%s", str)
 	
 	/*mapString := make(map[string]string)
@@ -43,6 +49,9 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 
 		mapString[strKey] = strValue
 	}
+	fmt.Printf("%T\n", items)
+	fmt.Println("%v\n", items)
+	fmt.Println("%#v", items)
 	fmt.Printf("%#v", mapString)
 	*/
 	/*keys := make([]string, len(items))
