@@ -40,7 +40,13 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	for _, k := range keys {
 		fmt.Println(k)
 		fmt.Println(url.PathEscape(fmt.Sprint(md[k])))
-		str+=k+"="+url.PathEscape(fmt.Sprint(md[k]))+"&"
+		if k=="currencyCode"{
+			str+=k+"="+fmt.Sprint(md[k])+"&"
+        	}
+		else{
+			str+=k+"="+url.PathEscape(fmt.Sprint(md[k]))+"&"
+        	}
+		
 		fmt.Println(str)
         }
 	fmt.Println("%s", str)
