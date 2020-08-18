@@ -41,6 +41,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 		fmt.Println(k)
 		fmt.Println(url.PathEscape(fmt.Sprint(md[k])))
 		str+=k+"="+url.PathEscape(fmt.Sprint(md[k]))+"&"
+		fmt.Println(str)
         }
 	fmt.Println("%s", str)
 	
