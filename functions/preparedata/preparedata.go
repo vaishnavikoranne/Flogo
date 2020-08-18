@@ -42,8 +42,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 		fmt.Println(url.PathEscape(fmt.Sprint(md[k])))
 		if k=="currencyCode"{
 			str+=k+"="+fmt.Sprint(md[k])+"&"
-        	}
-		else{
+        	}else{
 			str+=k+"="+url.PathEscape(fmt.Sprint(md[k]))+"&"
         	}
 		
