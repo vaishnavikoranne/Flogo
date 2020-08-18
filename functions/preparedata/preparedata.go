@@ -49,7 +49,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 		fmt.Println(str)
         }
 	fstr:=strings.ReplaceAll(str, "%20", "+")
-	fmt.Println("%s", str)
+	fmt.Println("%s", fstr)
 	
 	/*mapString := make(map[string]string)
 	for key, value := range items {
