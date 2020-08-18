@@ -27,15 +27,18 @@ func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
-	keys := make([]string, len(items))
 	str:=""
 	i:=0
 	for key, element := range items.(map[string]interface{}) {
-		keys[i]=key
 		i++
-        	//fmt.Println("Key:", key, "=>", "Element:", element)
-		//str+=key+"="+fmt.Sprint(element)+"&"
-   	}
+        }
+	
+	keys := make([]string, i)
+	j=0
+	for key, element := range items.(map[string]interface{}) {
+		keys[j]=key
+		j++
+        }
 	sort.Strings(keys) 
 	for _, k := range keys {
        	  str+=k+"="+fmt.Sprint(items[k])+"&"
