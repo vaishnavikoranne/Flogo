@@ -27,7 +27,7 @@ func (preparedata) Sig() (paramTypes []data.Type, isVariadic bool) {
 
 func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
-	md,ok:= items.(map[string]interface{})
+	md:= items.(map[string]interface{})
 	str:=""
 	i:=0
 	keys := make([]string, len(md))
