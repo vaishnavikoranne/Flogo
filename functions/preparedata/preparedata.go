@@ -39,6 +39,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	sort.Strings(keys) 
 	for _, k := range keys {
 		fmt.Println(fmt.Sprint(md[k]))
+		fmt.Println(url.PathEscape(fmt.Sprint(md[k])))
 		str+=k+"="+url.PathEscape(fmt.Sprint(md[k]))+"&"
         }
 	fmt.Println("%s", str)
