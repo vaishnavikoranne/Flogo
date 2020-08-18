@@ -93,7 +93,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	}
 			
 	str:=strings.Join(paramSlice, separator)*/
-	return str, nil
+	return fstr, nil
 
 
 }
