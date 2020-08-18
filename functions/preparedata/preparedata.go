@@ -30,15 +30,10 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	fmt.Println("%v\n", items)
 	fmt.Println("%#v", items)
 	str:=""
-	arrV := reflect.ValueOf(items)
-	for i:=0;i<arrV.Len();i++ {
-		inter:=arrV.Index(i).Interface()
-	
-                for k , v := range inter.(map[string]interface{}){
-		   
-			str+=k+"="+v.(string)
-		} 
-	}
+	for key, element := range items.(map[string]interface{}) {
+        	fmt.Println("Key:", key, "=>", "Element:", element)
+		str+=key+"="+element.(string)+"&"
+   	}
 	fmt.Println("%s", str)
 	
 	/*mapString := make(map[string]string)
