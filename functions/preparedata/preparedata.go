@@ -31,7 +31,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
 	str:=""
 	i:=0
 	keys := make([]string, len(md))
-	for key, element := range md{
+	for key, _ := range md{
 		keys[i]=key
 		i++
         }
