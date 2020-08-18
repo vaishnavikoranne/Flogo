@@ -4,7 +4,7 @@ import (
 	
 	"fmt"
 	"sort"
-	//"strings"
+	"strings"
        //"reflect"
 	"net/url"
 	"github.com/project-flogo/core/data"
