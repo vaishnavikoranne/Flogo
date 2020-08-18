@@ -6,6 +6,7 @@ import (
 	"sort"
 	//"strings"
        //"reflect"
+	"net/url"
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 )
@@ -37,7 +38,7 @@ func (preparedata) Eval(params ...interface{}) (interface{}, error) {
         }
 	sort.Strings(keys) 
 	for _, k := range keys {
-       	  str+=k+"="+fmt.Sprint(md[k])+"&"
+		str+=k+"="+url.QueryEscape(fmt.Sprint(md[k]))+"&"
         }
 	fmt.Println("%s", str)
 	
