@@ -13,6 +13,22 @@ import (
 	"golang.org/x/crypto/pbkdf2"
 )
 
+func init() {
+	_ = function.Register(&aesencrypt{})
+}
+
+type aesencrypt struct {
+}
+
+func (s *aesencrypt) Name() string {
+	return "aesencrypt"
+}
+
+func (s *aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
+	return []data.Type{data.TypeString}, false
+}
+
+
 func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
 	padding := blockSize - len(ciphertext)%blockSize
 	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
@@ -49,22 +65,8 @@ func AESEncrypt(src string, sPassphrase string, saltString string) string {
 	return base64.StdEncoding.EncodeToString(initialVector) + base64.StdEncoding.EncodeToString(crypted)
 }
 
-func init() {
-	_ = function.Register(&aesencrypt{})
-}
 
-type aesencrypt struct {
-}
-
-func (s *aesencrypt) Name() string {
-	return "aesencrypt"
-}
-
-func (aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
-	return []data.Type{data.TypeString}, false
-}
-
-func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
+func (s *aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 
 	plainText := params[0].(string)
 	passphrase := params[1].(string)
