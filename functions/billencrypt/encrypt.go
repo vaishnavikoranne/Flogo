@@ -30,7 +30,7 @@ func (aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
 }
 
 
-func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
+/*func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
 	padding := blockSize - len(ciphertext)%blockSize
 	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
 	return append(ciphertext, padtext...)
@@ -65,7 +65,7 @@ func AESEncrypt(src string, sPassphrase string, saltString string) string {
 
 	return base64.StdEncoding.EncodeToString(initialVector) + base64.StdEncoding.EncodeToString(crypted)
 }
-
+*/
 
 func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 
@@ -74,8 +74,8 @@ func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 	saltString:=params[2].(string)
 
 	fmt.Println(sPassphrase)
-    encryptedString := AESEncrypt(plainText, sPassphrase, saltString)
-	/*passphrase := []byte(sPassphrase)
+	//encryptedString := AESEncrypt(plainText, passphrase, saltstring)
+	passphrase := []byte(sPassphrase)
 	salt := []byte(saltString)
 
 	key := pbkdf2.Key([]byte(passphrase), salt, 1000, 32, sha1.New)
@@ -101,7 +101,7 @@ func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 	ecb.CryptBlocks(crypted, content)
 
 	encryptedString:=base64.StdEncoding.EncodeToString(initialVector) + base64.StdEncoding.EncodeToString(crypted)
-	*/
+
 	fmt.Println(encryptedString)
 	return encryptedString, nil
 
