@@ -68,7 +68,7 @@ func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 
 	plainText := params[0].(string)
 	passphrase := params[1].(string)
-	saltstring = "ac103458-fcb6-41d3-94r0-43d25b4f4ff4"
+	saltstring := "ac103458-fcb6-41d3-94r0-43d25b4f4ff4"
 
 	encryptedString := AESEncrypt(plainText, passphrase, saltstring)
 	fmt.Println(encryptedString)
