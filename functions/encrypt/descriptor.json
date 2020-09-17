@@ -12,16 +12,15 @@
 		"args":[
 			{
 			 "name":"text",
-			 "type":"string",
+			 "type":"string"
 			},
 			{
 			 "name":"key",
 			 "type":"string"
-
 			}
 		],
 		"return":{
-		"type":"string"
+			"type":"string"
 		},
 		"display":{
 		"visible":true
