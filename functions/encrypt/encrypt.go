@@ -13,19 +13,20 @@ import (
 	"golang.org/x/crypto/pbkdf2"
 )
 
+type aesencrypt struct {
+}
+
 func init() {
 	_ = function.Register(&aesencrypt{})
 }
 
-type aesencrypt struct {
-}
 
 func (s *aesencrypt) Name() string {
 	return "aesencrypt"
 }
 
 func (s *aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
-	return []data.Type{data.TypeString,data.TypeString,data.TypeString}, false
+	return []data.Type{}, false
 }
 
 
