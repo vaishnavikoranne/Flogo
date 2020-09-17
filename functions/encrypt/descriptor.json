@@ -1,5 +1,5 @@
 {
-	"name":"AESEncrypt",
+	"name":"aesencrypt",
 	"type":"flogo:function",
 	"version":"0.0.1",
 	"title":"encrypt",
@@ -8,14 +8,18 @@
 		{
 		"name":"aesencrypt",
 		"description":"Encrypts the given string using AES algorithm",
-		"example":"aesencrypt(text,key)",
+		"example":"aesencrypt(plaintext,passphrase,salt)",
 		"args":[
 			{
-			 "name":"text",
+			 "name":"plaintext",
 			 "type":"string"
 			},
 			{
-			 "name":"key",
+			 "name":"passphrase",
+			 "type":"string"
+			},
+			{
+			 "name":"salt",
 			 "type":"string"
 			}
 		],
