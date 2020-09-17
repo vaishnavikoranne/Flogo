@@ -1,0 +1,27 @@
+{
+	"name":"AESEncrypt",
+	"type":"flogo:function",
+	"version":"0.0.1",
+	"title":"decrypt",
+	"description":"Decrypt using AES ",
+	"functions":[
+		{
+		"name":"aesdecrypt",
+		"description":"Decrypts the given string using AES algorithm",
+		"example":"aesencrypt(encrpyted text)",
+		"args":[
+			{
+			 "name":"text",
+			 "type":"string",
+			}
+			
+		],
+		"return":{
+		"type":"string"
+		},
+		"display":{
+		"visible":true
+		}
+		}
+	]
+}

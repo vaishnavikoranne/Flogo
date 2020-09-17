@@ -1,4 +1,4 @@
-package encrypt
+package decrypt
 
 import (
 	"bytes"
@@ -6,11 +6,25 @@ import (
 	"crypto/cipher"
 	"crypto/sha1"
 	"encoding/base64"
+	"errors"
 	"fmt"
-
+	"golang.org/x/crypto/pbkdf2"
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
-	"golang.org/x/crypto/pbkdf2"
+)
+var (
+	//passphrase = "47cef24b-2b82-4ac4-a27c-fb0aca32baea"
+	saltstring = "ac103458-fcb6-41d3-94r0-43d25b4f4ff4"
+
+	ErrInvalidBlockSize = errors.New("invalid blocksize")
+
+	// ErrInvalidPKCS7Data indicates bad input to PKCS7 pad or unpad.
+	ErrInvalidPKCS7Data = errors.New("invalid PKCS7 data (empty or not padded)")
+
+	// ErrInvalidPKCS7Padding indicates PKCS7 unpad fails to bad input.
+	ErrInvalidPKCS7Padding = errors.New("invalid padding on input")
+
+	salt = []byte(saltstring)
 )
 
 func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
@@ -23,12 +37,7 @@ func deriveKey(passphrase []byte, salt []byte) []byte {
 
 	return pbkdf2.Key([]byte(passphrase), salt, 1000, 32, sha1.New)
 }
-
-func AESEncrypt(src string, sPassphrase string, saltString string) string {
-
-	passphrase := []byte(sPassphrase)
-	salt := []byte(saltString)
-
+func AESEncrypt(src string, passphrase []byte) ([]byte, []byte) {
 	key := deriveKey(passphrase, salt)
 	block, err := aes.NewCipher(key)
 	if err != nil {
@@ -37,8 +46,7 @@ func AESEncrypt(src string, sPassphrase string, saltString string) string {
 	if src == "" {
 		fmt.Println("plain content empty")
 	}
-	//initialVector := make([]byte, aes.BlockSize)
-	var initialVector = []byte{34, 35, 35, 57, 68, 4, 35, 36, 7, 8, 35, 23, 35, 86, 35, 23}
+	initialVector := make([]byte, aes.BlockSize)
 
 	ecb := cipher.NewCBCEncrypter(block, []byte(initialVector))
 	content := []byte(src)
@@ -46,7 +54,7 @@ func AESEncrypt(src string, sPassphrase string, saltString string) string {
 	crypted := make([]byte, len(content))
 	ecb.CryptBlocks(crypted, content)
 
-	return base64.StdEncoding.EncodeToString(initialVector) + base64.StdEncoding.EncodeToString(crypted)
+	return crypted, initialVector
 }
 
 func init() {
@@ -65,13 +73,14 @@ func (aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
 }
 
 func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
+	
+	plainText:=params[0].(string)
+	passphrase:=params[1].(string)	
 
-	plainText := params[0].(string)
-	passphrase := params[1].(string)
-	saltstring = "ac103458-fcb6-41d3-94r0-43d25b4f4ff4"
+	encryptedData, iv := AESEncrypt(plainText, []byte(passphrase))
+	encryptedString := base64.StdEncoding.EncodeToString(encryptedData)
+	fmt.Println(base64.StdEncoding.EncodeToString(iv) + encryptedString)
+	return base64.StdEncoding.EncodeToString(iv) + encryptedString ,nil;
 
-	encryptedString := AESEncrypt(plainText, passphrase, saltstring)
-	fmt.Println(encryptedString)
-	return encryptedString, nil
 
 }
