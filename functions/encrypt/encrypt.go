@@ -2,15 +2,19 @@ package encrypt
 
 import (
 	"bytes"
-	"crypto/aes"
+	/*"crypto/aes"
 	"crypto/cipher"
 	"crypto/sha1"
+	*/
 	"encoding/base64"
 	"fmt"
 
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 	"golang.org/x/crypto/pbkdf2"
+	"github.com/project-flogo/core/data/crypto/aes"
+	"github.com/project-flogo/core/data/crypto/cipher"
+	"github.com/project-flogo/core/data/crypto/sha1"
 )
 
 type aesencrypt struct {
