@@ -21,11 +21,11 @@ func init() {
 }
 
 
-func (a *aesencrypt) Name() string {
-	return "aesencrypt"
+func (s *aesencrypt) Name() string {
+	return "encrypt"
 }
 
-func (aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
+func (s *aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
 	return []data.Type{data.TypeString,data.TypeString,data.TypeString}, false
 }
 
@@ -67,7 +67,7 @@ func AESEncrypt(src string, sPassphrase string, saltString string) string {
 }
 
 
-func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
+func (s *aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 
 	plainText := params[0].(string)
 	sPassphrase := params[1].(string)

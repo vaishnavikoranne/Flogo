@@ -6,7 +6,7 @@
 	"description":"Encrypt using AES ",
 	"functions":[
 		{
-		"name":"encrypt",
+		"name":"aesencrypt",
 		"description":"Encrypts the given string using AES algorithm",
 		"example":"aesencrypt(plaintext,passphrase,salt)",
 		"args":[
