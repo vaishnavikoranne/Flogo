@@ -80,7 +80,7 @@ func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 	encryptedData, iv := AESEncrypt(plainText, []byte(passphrase))
 	encryptedString := base64.StdEncoding.EncodeToString(encryptedData)
 	fmt.Println(base64.StdEncoding.EncodeToString(iv) + encryptedString)
-	return base64.StdEncoding.EncodeToString(iv) + encryptedString;
+	return base64.StdEncoding.EncodeToString(iv) + encryptedString ,nil;
 
 
 }
