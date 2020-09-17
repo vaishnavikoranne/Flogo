@@ -13,7 +13,7 @@ import (
 	"github.com/project-flogo/core/data/expression/function"
 )
 var (
-	passphrase = "47cef24b-2b82-4ac4-a27c-fb0aca32baea"
+	//passphrase = "47cef24b-2b82-4ac4-a27c-fb0aca32baea"
 	saltstring = "ac103458-fcb6-41d3-94r0-43d25b4f4ff4"
 
 	ErrInvalidBlockSize = errors.New("invalid blocksize")
@@ -75,7 +75,7 @@ func (aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 	
 	plainText:=params[0].(string)
-	key:=params[1].(string)	
+	passphrase:=params[1].(string)	
 
 	encryptedData, iv := AESEncrypt(plainText, []byte(passphrase))
 	encryptedString := base64.StdEncoding.EncodeToString(encryptedData)
