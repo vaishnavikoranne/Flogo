@@ -25,7 +25,7 @@ func (s *aesencrypt) Name() string {
 }
 
 func (s *aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
-	return []data.Type{}, false
+	return []data.Type{data.TypeString,data.TypeString,data.TypeString}, false
 }
 
 
