@@ -17,11 +17,11 @@ type aesencrypt struct {
 }
 
 func init() {
-	_ = function.Register(&aesencrypt{})
+	function.Register(&aesencrypt{})
 }
 
 
-func (s *aesencrypt) Name() string {
+func (a *aesencrypt) Name() string {
 	return "aesencrypt"
 }
 
