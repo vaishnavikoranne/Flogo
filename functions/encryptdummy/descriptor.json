@@ -1,35 +1,38 @@
 {
-	"name":"aesencrypt",
-	"type":"flogo:function",
-	"version":"0.0.1",
-	"title":"aesencrypt",
-	"description":"Encrypt using AES ",
-	"functions":[
+"name": "billencrypt",
+"type": "flogo:function",
+"version": "0.0.1",
+"title": "billencrypt",
+"description": "billencrypt function",
+"functions": [
+{
+"name": "billencrypt",
+"description": "Encrypt",
+"example": "",
+"args": [
 		{
-		"name":"aesencrypt",
-		"description":"Encrypts the given string using AES algorithm",
-		"example":"aesencrypt(plaintext,passphrase,salt)",
-		"args":[
-			{
-			 "name":"plaintext",
-			 "type":"string",
-			 "valueType":"string"
-			},
-			{
-			 "name":"passphrase",
-			 "type":"string",
-			 "valueType":"string"
-			},
-			{
-			 "name":"salt",
-			 "type":"string",
-			 "valueType":"string"
-			}
-		],
-		"return":{
-			"type":"string",
-			"valueType":"string"
+			"name": "plaintext",
+			"type": "string",
+			"value":""
+		},
+		{
+			"name": "passphrase",
+			"type": "string",
+			"value":""
+		},
+		{
+			"name": "salt",
+			"type": "string",
+			"value":""
 		}
-		}
-	]
+		
+],
+"return": {
+"type": "string"
+},
+"display": {
+"visible": true
+}
+}
+]
 }
