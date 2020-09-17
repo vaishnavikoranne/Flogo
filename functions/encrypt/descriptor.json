@@ -12,19 +12,23 @@
 		"args":[
 			{
 			 "name":"plaintext",
-			 "type":"string"
+			 "type":"string",
+			 "valueType":"string"
 			},
 			{
 			 "name":"passphrase",
-			 "type":"string"
+			 "type":"string",
+			 "valueType":"string"
 			},
 			{
 			 "name":"salt",
-			 "type":"string"
+			 "type":"string",
+			 "valueType":"string"
 			}
 		],
 		"return":{
-			"type":"string"
+			"type":"string",
+			"valueType":"string"
 		},
 		"display":{
 		"visible":true
