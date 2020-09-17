@@ -18,7 +18,7 @@ func PKCS5Trimming(encrypt []byte) []byte {
 	return encrypt[:len(encrypt)-int(padding)]
 }
 
-func deriveKey(passphrase []byte, salt []byte) []byte {
+func deriveeKey(passphrase []byte, salt []byte) []byte {
 
 	return pbkdf2.Key([]byte(passphrase), salt, 1000, 32, sha1.New)
 }
@@ -30,7 +30,7 @@ func AESDecrypt(encryptedString string, sPassphrase string, saltString string) s
 
 	passphrase := []byte(sPassphrase)
 	salt := []byte(saltString)
-	key := deriveKey(passphrase, salt)
+	key := deriveeKey(passphrase, salt)
 	block, err := aes.NewCipher(key)
 	if err != nil {
 		fmt.Println("key error1", err)
