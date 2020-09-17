@@ -2,7 +2,7 @@
 	"name":"aesencrypt",
 	"type":"flogo:function",
 	"version":"0.0.1",
-	"title":"encrypt",
+	"title":"aesencrypt",
 	"description":"Encrypt using AES ",
 	"functions":[
 		{
