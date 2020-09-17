@@ -5,7 +5,7 @@ import(
  "testing"
  
 )
-var testfn=&aesencrypt{}
+var testfn=&AESEncrypt{}
 var inputString1,in2,in3 string
 func init(){
 	

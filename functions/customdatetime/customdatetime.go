@@ -19,9 +19,10 @@ func (s *fnDateTimeToTimeStamp) Name() string {
 }
 
 func (s *fnDateTimeToTimeStamp) Sig() (paramTypes []data.Type, isVariadic bool) {
-	return []data.Type{}, false
+	return []data.Type{data.TypeString}, false
 }
 
 func (s *fnDateTimeToTimeStamp) Eval(in ...interface{}) (interface{}, error) {
-	return time.Now().UnixNano() / int64(time.Millisecond),nil
+	plainText := params[0].(string)
+	return plainText,nil
 }

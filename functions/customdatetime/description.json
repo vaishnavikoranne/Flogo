@@ -10,9 +10,14 @@
 "description":"Converts current date time to timestamp",
 "example":"customdatetime.totimestamp()\nReturns\n1573809431645",
 "args":[
+		{
+		 "name":"plaintext",
+		 "type":"string",
+		 "valueType":"string"
+		}
 ],
 "return":{
-"type":"int64"
+"type":"string"
 },
 "display":{
 "visible":true
