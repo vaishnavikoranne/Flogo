@@ -5,8 +5,8 @@ import (
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/sha1"
-	"encoding/base64"*/
-	"fmt"
+	"encoding/base64"
+	"fmt"*/
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 	/*"golang.org/x/crypto/pbkdf2"*/
