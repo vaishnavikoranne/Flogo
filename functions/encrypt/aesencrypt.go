@@ -22,7 +22,7 @@ func init() {
 
 
 func (s *aesencrypt) Name() string {
-	return "encrypt"
+	return "aesencrypt"
 }
 
 func (s *aesencrypt) Sig() (paramTypes []data.Type, isVariadic bool) {
