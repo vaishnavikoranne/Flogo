@@ -75,7 +75,7 @@ func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 
 	fmt.Println(sPassphrase)
    // encryptedString := AESEncrypt(plainText, sPassphrase, saltString)
-	encryptedString=plainText+sPassphrase
+	encryptedString:=plainText+sPassphrase
 	fmt.Println(encryptedString)
 	return encryptedString, nil
 
