@@ -1,12 +1,12 @@
 {
-"name": "billencrypt",
+"name": "AESEncrypt",
 "type": "flogo:function",
 "version": "0.0.1",
-"title": "billencrypt",
-"description": "billencrypt function",
+"title": "AESEncrypt",
+"description": "AESEncrypt function",
 "functions": [
 {
-"name": "billencrypt",
+"name": "AESEncrypt",
 "description": "Encrypt",
 "example": "",
 "args": [
