@@ -1,26 +1,34 @@
 {
-	"name":"AESEncrypt",
+	"name":"aesdecrypt",
 	"type":"flogo:function",
 	"version":"0.0.1",
-	"title":"decrypt",
+	"title":"aesdecrypt",
 	"description":"Decrypt using AES ",
 	"functions":[
 		{
 		"name":"aesdecrypt",
 		"description":"Decrypts the given string using AES algorithm",
-		"example":"aesencrypt(encrpyted text)",
+		"example":"aesdecrypt(encrpytedtext,passphrase,salt)",
 		"args":[
 			{
-			 "name":"text",
+			 "name":"encrpytedtext",
 			 "type":"string",
+			 "valueType":"string"
+			},
+			{
+			 "name":"passphrase",
+			 "type":"string",
+			 "valueType":"string"
+			},
+			{
+			 "name":"salt",
+			 "type":"string",
+			 "valueType":"string"
 			}
-			
 		],
 		"return":{
-		"type":"string"
-		},
-		"display":{
-		"visible":true
+			"type":"string",
+			"valueType":"string"
 		}
 		}
 	]

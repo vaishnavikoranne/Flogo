@@ -2,19 +2,15 @@ package encrypt
 
 import (
 	"bytes"
-	/*"crypto/aes"
+	"crypto/aes"
 	"crypto/cipher"
 	"crypto/sha1"
-	*/
 	"encoding/base64"
 	"fmt"
-
 	"github.com/project-flogo/core/data"
 	"github.com/project-flogo/core/data/expression/function"
 	"golang.org/x/crypto/pbkdf2"
-	"github.com/project-flogo/core/data/crypto/aes"
-	"github.com/project-flogo/core/data/crypto/cipher"
-	"github.com/project-flogo/core/data/crypto/sha1"
+	
 )
 
 type aesencrypt struct {
@@ -79,33 +75,7 @@ func (aesencrypt) Eval(params ...interface{}) (interface{}, error) {
 
 	fmt.Println(sPassphrase)
     encryptedString := AESEncrypt(plainText, sPassphrase, saltString)
-	/*passphrase := []byte(sPassphrase)
-	salt := []byte(saltString)
-
-	key := pbkdf2.Key([]byte(passphrase), salt, 1000, 32, sha1.New)
-	block, err := aes.NewCipher(key)
-	if err != nil {
-		fmt.Println("key error1", err)
-	}
-	if plainText == "" {
-		fmt.Println("plain content empty")
-	}
-	//initialVector := make([]byte, aes.BlockSize)
-	var initialVector = []byte{34, 35, 35, 57, 68, 4, 35, 36, 7, 8, 35, 23, 35, 86, 35, 23}
-
-	ecb := cipher.NewCBCEncrypter(block, []byte(initialVector))
-	content := []byte(plainText)
-	blockSize:=block.BlockSize()
-	padding := blockSize - len(content)%blockSize
-	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
 	
-	content = append(content, padtext...)
-	
-	crypted := make([]byte, len(content))
-	ecb.CryptBlocks(crypted, content)
-
-	encryptedString:=base64.StdEncoding.EncodeToString(initialVector) + base64.StdEncoding.EncodeToString(crypted)
-	*/
 	fmt.Println(encryptedString)
 	return encryptedString, nil
 
