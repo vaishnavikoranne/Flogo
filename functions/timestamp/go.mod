@@ -1,1 +1,1 @@
-module github.com/vaishnavikoranne/Flogo/functions/arraytostring
+module github.com/vaishnavikoranne/Flogo/functions/timestamp
