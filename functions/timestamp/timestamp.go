@@ -1,8 +1,6 @@
 package timestamp
 
 import (
-	"github.com/project-flogo/core/data"
-	"github.com/project-flogo/core/data/expression/function"
 	"time"
 )
 
