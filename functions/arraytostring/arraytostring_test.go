@@ -16,7 +16,9 @@ func init() {
 }
 
 func TestInt64Sample(t *testing.T) {
-	final, err := in.Eval()
+	var  balance = []int {1000, 2, 3, 17, 50}
+	var sep=","
+	final, err := in.Eval(balance,sep)
 	assert.Nil(t, err)
 	//assert.Equal(t, int(579), final)
 	fmt.Printf("%v\n", final)
