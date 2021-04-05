@@ -16,7 +16,7 @@ func init() {
 }
 
 func TestInt64Sample(t *testing.T) {
-	var  balance = []int {1000, 2, 3, 17, 50}
+	var  balance =[]interface{} {1000, 2, 3, 17, 50}
 	var sep=","
 	final, err := in.Eval(balance,sep)
 	assert.Nil(t, err)
