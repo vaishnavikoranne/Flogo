@@ -47,7 +47,7 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
   		}
   		
  	}
- 	paramSlice=paramSlice[:len(paramSlice)]
+ 	paramSlice=paramSlice[:len(paramSlice)-1]
 			
 	//str:=strings.Join(paramSlice, separator)
 	return paramSlice, nil
