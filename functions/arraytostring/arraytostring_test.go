@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var in = &fnDateTimeToTimeStamp{}
+var in = &arraytostring{}
 
 func init() {
 	function.ResolveAliases()
