@@ -27,7 +27,7 @@ func (arraytostring) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	items:=params[0]
 	separator:=params[1].(string)
-    var paramSlice []string 
+    var paramSlice string 
 	//arrV := reflect.ValueOf(items)
 	
 	/*for i:=0;i<arrV.Len();i++ {
@@ -43,13 +43,13 @@ func (arraytostring) Eval(params ...interface{}) (interface{}, error) {
 	arrV := reflect.ValueOf(items)
  	if arrV.Kind() == reflect.Slice {
   		for _, v := range items.([]interface{}) {
-   		paramSlice += v.(string)
+   		paramSlice =paramSlice+ v.(string)+separator
   		}
   		
  	}
 			
-	str:=strings.Join(paramSlice, separator)
-	return str, nil
+	//str:=strings.Join(paramSlice, separator)
+	return paramSlice, nil
 
 
 }
