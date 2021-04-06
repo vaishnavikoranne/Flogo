@@ -7,7 +7,7 @@
 "functions":[
 {
 "name":"arraytostring",
-"description":"Converts an array to string",
+"description":"Converts an array to string seperated with the given seperator",
 "example":"arraytostring(array,',')\n Returns a string containing string with comma seperated values",
 "args":[
 {

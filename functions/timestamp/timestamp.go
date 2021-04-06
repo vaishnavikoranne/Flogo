@@ -1,3 +1,4 @@
+
 package timestamp
 
 import (
@@ -7,21 +8,21 @@ import (
 )
 
 
-type fnDateTimeToTimeStamp struct {
+type totimestamp struct {
 }
 
 func init() {
-	function.Register(&fnDateTimeToTimeStamp{})
+	function.Register(&totimestamp{})
 }
 
-func (s *fnDateTimeToTimeStamp) Name() string {
+func (s *totimestamp) Name() string {
 	return "totimestamp"
 }
 
-func (s *fnDateTimeToTimeStamp) Sig() (paramTypes []data.Type, isVariadic bool) {
+func (s *totimestamp) Sig() (paramTypes []data.Type, isVariadic bool) {
 	return []data.Type{}, false
 }
 
-func (s *fnDateTimeToTimeStamp) Eval(in ...interface{}) (interface{}, error) {
+func (s *totimestamp) Eval(in ...interface{}) (interface{}, error) {
 	return time.Now().UnixNano() / int64(time.Millisecond),nil
 }

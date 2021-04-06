@@ -12,10 +12,8 @@
 			"args": [],
 			"return": {
 				"type": "int64"
-			},
-			"display": {
-				"visible": true
 			}
+			
 		}
 	]
 }
